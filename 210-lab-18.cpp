@@ -121,7 +121,19 @@ void addTail ( Node *&hd){
         getline(cin, tempC);
         newNode->choice.setRating(tempR);
         newNode->choice.setComment(tempC);
-        
+
+        if(!hd){
+            hd = newNode;
+            newNode->next = nullptr;
+        }
+        else{
+            Node *current = hd;
+            while(current->next){
+                current = current->next;
+            }
+            current->next = newNode;
+            newNode->next = nullptr;
+        }
     }
 
 }
