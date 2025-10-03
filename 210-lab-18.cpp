@@ -53,9 +53,26 @@ void outputMenu(){
 }
 
 void addHead( Node *&hd){
+    double tempR;
+    string tempC; 
+    bool review = 1;
+
+    while( review != 0){
+        Node *newNode = new Node;
+
+        cout << "Enter review rating 0-5: ";
+        cin >> tempR;
+        cout << "Enter review comment: "; 
+        cin.ignore();
+        getline(cin, tempC);
+    }
+
+    
+    
+
 
 }
 
 void addTail ( Node *&hd){
-    
+
 }
