@@ -82,6 +82,10 @@ void addHead( Node *&hd){
 
         cout << "Enter review rating 0-5: ";
         cin >> tempR;
+        while((tempR > 5) || (tempR < 1)){
+            cout << "Invalid Raring, please enter your rating again(1-5): ";
+            cin >> tempR;
+        }
         cout << "Enter review comment: "; 
         cin.ignore();
         getline(cin, tempC);
@@ -119,6 +123,10 @@ void addTail ( Node *&hd){
 
         cout << "Enter review rating 0-5: ";
         cin >> tempR;
+        while((tempR > 5) || (tempR < 1)){
+            cout << "Invalid Raring, please enter your rating again(1-5): ";
+            cin >> tempR;
+        }
         cout << "Enter review comment: "; 
         cin.ignore();
         getline(cin, tempC);
