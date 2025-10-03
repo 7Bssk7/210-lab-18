@@ -55,6 +55,7 @@ void outputMenu(){
 void addHead( Node *&hd){
     double tempR;
     string tempC; 
+    char q;
     bool review = 1;
 
     while( review != 0){
@@ -71,6 +72,12 @@ void addHead( Node *&hd){
         if(!hd){
             hd = newNode;
             newNode->next = nullptr;
+        }
+        
+        cout << "Enter another review? Y/N: ";
+        cin >> q;
+        if(tolower(q)== 'n'){
+            review = 0;
         }
     }
 
