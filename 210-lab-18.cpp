@@ -2,6 +2,9 @@
 #include <string>
 using namespace std;
 
+const double RATING_MAX = 5.0, RATING_MIN = 1.0;
+const char YES = 'y', NO = 'n';
+
 class Movie{
     public:
         string getComment() const { return comment; }
@@ -82,8 +85,8 @@ void addHead( Node *&hd){
 
         cout << "Enter review rating 0-5: ";
         cin >> tempR;
-        while((tempR > 5) || (tempR < 1)){
-            cout << "Invalid Raring, please enter your rating again(1-5): ";
+        while((tempR > RATING_MAX) || (tempR < RATING_MIN)){
+            cout << "Invalid Rating, please enter your rating again(1-5): ";
             cin >> tempR;
         }
         cout << "Enter review comment: "; 
@@ -103,11 +106,11 @@ void addHead( Node *&hd){
         
         cout << "Enter another review? Y/N: ";
         cin >> q;
-        while((tolower(q) != 'n') && (tolower(q) != 'y')){
+        while((tolower(q) != NO) && (tolower(q) != YES)){
             cout << "Invalid input, please enter your choice again(Y/N): ";
             cin >> q;
         }
-        if(tolower(q) == 'n'){
+        if(tolower(q) == NO){
              review = 0;
         }
     }
@@ -127,8 +130,8 @@ void addTail ( Node *&hd){
 
         cout << "Enter review rating 0-5: ";
         cin >> tempR;
-        while((tempR > 5) || (tempR < 1)){
-            cout << "Invalid Raring, please enter your rating again(1-5): ";
+        while((tempR > RATING_MAX) || (tempR < RATING_MIN)){
+            cout << "Invalid Rating, please enter your rating again(1-5): ";
             cin >> tempR;
         }
         cout << "Enter review comment: "; 
@@ -152,11 +155,11 @@ void addTail ( Node *&hd){
 
         cout << "Enter another review? Y/N: ";
         cin >> q;
-        while((tolower(q) != 'n') && (tolower(q) != 'y')){
+        while((tolower(q) != NO) && (tolower(q) != YES)){
             cout << "Invalid input, please enter your choice again(Y/N): ";
             cin >> q;
         }
-        if(tolower(q) == 'n'){
+        if(tolower(q) == NO){
              review = 0;
         }
     }
@@ -166,7 +169,7 @@ void addTail ( Node *&hd){
 double averageRating (Node *hd){
     Node *current = hd;
     int count = 0;
-    double sum;
+    double sum = 0;
 
     while(current){
         sum += current->choice.getRating();
