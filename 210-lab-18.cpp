@@ -10,6 +10,10 @@ int main(){
     outputMenu();
     cout << "Choice: ";
     cin >> entry;
+    while((entry > 2) || (entry < 1)){
+        cout << "Invalid choice, please enter your choice again(1 - 2): ";
+        cin >> entry;
+    }
 
     return 0;
 }
