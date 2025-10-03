@@ -52,6 +52,21 @@ void outputMenu(){
     cout << "    [2] New nodes are added at the tail of the linked list" << endl;
 }
 
+void outputList( Node *hd){
+    int count = 1;
+    Node *current = hd;
+    cout << "Output all reviews" << endl;
+    if(!hd){
+        cout << "Empty list" << endl;
+    }
+    else{
+        while(current){
+            cout << "     > Review #" << count << ": "  << current->choice.getRating() << ": " << current->choice.getComment() << endl;
+            current = current->next;
+        } 
+    }
+}
+
 void addHead( Node *&hd){
     double tempR;
     string tempC; 
@@ -73,6 +88,10 @@ void addHead( Node *&hd){
             hd = newNode;
             newNode->next = nullptr;
         }
+        else{
+            newNode->next = hd;
+            hd = newNode;
+        }
         
         cout << "Enter another review? Y/N: ";
         cin >> q;
@@ -81,8 +100,6 @@ void addHead( Node *&hd){
         }
     }
 
-    
-    
 
 
 }
