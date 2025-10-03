@@ -1,10 +1,14 @@
+// COMSC-210 | Lab 18 | Arkhip Finski
+// IDE used : Visual Studio
 #include <iostream>
 #include <string>
 using namespace std;
 
+// Constants for rating bounds and inut validation
 const double RATING_MAX = 5.0, RATING_MIN = 1.0;
 const char YES = 'y', NO = 'n';
 
+// Movie class stores a single review's rating and comment
 class Movie{
     public:
         string getComment() const { return comment; }
@@ -18,6 +22,7 @@ class Movie{
 
 };
 
+// Node struct represents a single node on the linked list
 struct Node{
     Movie choice;
     Node *next;
@@ -36,27 +41,39 @@ int main(){
     outputMenu();
     cout << "Choice: ";
     cin >> entry;
+
+    // Validate menu choice
     while((entry > 2) || (entry < 1)){
         cout << "Invalid choice, please enter your choice again(1 - 2): ";
         cin >> entry;
     }
+
+    // Call appropriate insertion function 
     if(entry == 2){
         addTail(head);
     }
     else if(entry == 1){
         addHead(head);
     }
+
+    // Output all review and average 
     outputList(head);
 
     return 0;
 }
 
+// OutputMenu() displays the insertion mode options to the user
+// argument: none
+//return: no return(void function)
 void outputMenu(){
     cout << "Which linked list method should we use?" << endl;
     cout << "    [1] New nodes are added at the head of the linked list" << endl;
     cout << "    [2] New nodes are added at the tail of the linked list" << endl;
 }
 
+// outputList() traverses the linked list and prints all reviews and the average rating 
+// argument: hd - pointer to the head of the linked list 
+// return: no return(void fucntion)
 void outputList( Node *hd){
     int count = 1;
     Node *current = hd;
@@ -74,6 +91,9 @@ void outputList( Node *hd){
     cout << "     > Average: " << averageRating(hd) << endl;
 }
 
+// addHead() inserts new reviews at the head of the linked list
+// argument: hd - reference to the pointer to the head pointer of the linked list 
+// return: no return(void function)
 void addHead( Node *&hd){
     double tempR;
     string tempC; 
@@ -119,6 +139,9 @@ void addHead( Node *&hd){
 
 }
 
+// addHead() inserts new reviews at the tail of the linked list
+// argument: hd - reference to the pointer to the head pointer of the linked list 
+// return: no return(void function)
 void addTail ( Node *&hd){
     double tempR;
     string tempC;
@@ -166,6 +189,9 @@ void addTail ( Node *&hd){
 
 }
 
+// averageRating() calculates the average rating of all reviews in the linked list
+// argument: hd - pointer to the head of the linked list
+// return: returns double - the average rating
 double averageRating (Node *hd){
     Node *current = hd;
     int count = 0;
@@ -178,5 +204,4 @@ double averageRating (Node *hd){
     }
 
     return (sum/count);
-
 }
