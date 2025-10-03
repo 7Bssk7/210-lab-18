@@ -103,7 +103,7 @@ void addHead( Node *&hd){
         
         cout << "Enter another review? Y/N: ";
         cin >> q;
-        while((tolower(q) != 'n') || (tolower(q) != 'y')){
+        while((tolower(q) != 'n') && (tolower(q) != 'y')){
             cout << "Invalid input, please enter your choice again(Y/N): ";
             cin >> q;
         }
@@ -152,7 +152,7 @@ void addTail ( Node *&hd){
 
         cout << "Enter another review? Y/N: ";
         cin >> q;
-        while((tolower(q) != 'n') || (tolower(q) != 'y')){
+        while((tolower(q) != 'n') && (tolower(q) != 'y')){
             cout << "Invalid input, please enter your choice again(Y/N): ";
             cin >> q;
         }
