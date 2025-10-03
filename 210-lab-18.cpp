@@ -15,7 +15,14 @@ class Movie{
 
 };
 
+struct Node{
+    Movie choice;
+    Node *next;
+};
+
 void outputMenu();
+void addHead( Node *&);
+void addTail ( Node *&);
 
 int main(){
     int entry;
