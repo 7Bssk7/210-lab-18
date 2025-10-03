@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-// Constants for rating bounds and inut validation
+// Constants for rating bounds and input validation
 const double RATING_MAX = 5.0, RATING_MIN = 1.0;
 const char YES = 'y', NO = 'n';
 
@@ -64,7 +64,7 @@ int main(){
 
 // OutputMenu() displays the insertion mode options to the user
 // argument: none
-//return: no return(void function)
+// return: no return(void function)
 void outputMenu(){
     cout << "Which linked list method should we use?" << endl;
     cout << "    [1] New nodes are added at the head of the linked list" << endl;
@@ -73,7 +73,7 @@ void outputMenu(){
 
 // outputList() traverses the linked list and prints all reviews and the average rating 
 // argument: hd - pointer to the head of the linked list 
-// return: no return(void fucntion)
+// return: no return(void function)
 void outputList( Node *hd){
     int count = 1;
     Node *current = hd;
@@ -139,7 +139,7 @@ void addHead( Node *&hd){
 
 }
 
-// addHead() inserts new reviews at the tail of the linked list
+// addTail() inserts new reviews at the tail of the linked list
 // argument: hd - reference to the pointer to the head pointer of the linked list 
 // return: no return(void function)
 void addTail ( Node *&hd){
