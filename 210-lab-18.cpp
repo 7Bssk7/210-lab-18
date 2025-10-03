@@ -21,10 +21,12 @@ struct Node{
 };
 
 void outputMenu();
+void outputList( Node *);
 void addHead( Node *&);
 void addTail ( Node *&);
 
 int main(){
+    Node *head = nullptr;
     int entry;
     
     outputMenu();
@@ -34,6 +36,12 @@ int main(){
         cout << "Invalid choice, please enter your choice again(1 - 2): ";
         cin >> entry;
     }
+    if(entry == 2){
+        addTail(head);
+    }
+    else if(entry == 1){
+        addHead(head);
+    }
 
     return 0;
 }
@@ -42,4 +50,12 @@ void outputMenu(){
     cout << "Which linked list method should we use?" << endl;
     cout << "    [1] New nodes are added at the head of the linked list" << endl;
     cout << "    [2] New nodes are added at the tail of the linked list" << endl;
+}
+
+void addHead( Node *&hd){
+
+}
+
+void addTail ( Node *&hd){
+    
 }
