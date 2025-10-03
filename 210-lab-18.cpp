@@ -24,6 +24,7 @@ void outputMenu();
 void outputList( Node *);
 void addHead( Node *&);
 void addTail ( Node *&);
+double averageRating ( Node *);
 
 int main(){
     Node *head = nullptr;
@@ -67,6 +68,7 @@ void outputList( Node *hd){
             current = current->next;
         } 
     }
+    cout << "     > Average: " << averageRating(hd) << endl;
 }
 
 void addHead( Node *&hd){
@@ -142,5 +144,20 @@ void addTail ( Node *&hd){
             review = 0;
         }
     }
+
+}
+
+double averageRating (Node *hd){
+    Node *current = hd;
+    int count = 0;
+    double sum;
+
+    while(current){
+        sum += current->choice.getRating();
+        count++;
+        current = current->next;
+    }
+
+    return (sum/count);
 
 }
