@@ -42,6 +42,7 @@ int main(){
     else if(entry == 1){
         addHead(head);
     }
+    outputList(head);
 
     return 0;
 }
@@ -105,5 +106,22 @@ void addHead( Node *&hd){
 }
 
 void addTail ( Node *&hd){
+    double tempR;
+    string tempC;
+    char q;
+    bool review = 1;
+
+    while(review == 1){
+        Node *newNode = new Node;
+
+        cout << "Enter review rating 0-5: ";
+        cin >> tempR;
+        cout << "Enter review comment: "; 
+        cin.ignore();
+        getline(cin, tempC);
+        newNode->choice.setRating(tempR);
+        newNode->choice.setComment(tempC);
+        
+    }
 
 }
