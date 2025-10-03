@@ -63,6 +63,7 @@ void outputList( Node *hd){
     else{
         while(current){
             cout << "     > Review #" << count << ": "  << current->choice.getRating() << ": " << current->choice.getComment() << endl;
+            count++;
             current = current->next;
         } 
     }
@@ -133,6 +134,12 @@ void addTail ( Node *&hd){
             }
             current->next = newNode;
             newNode->next = nullptr;
+        }
+
+        cout << "Enter another review? Y/N: ";
+        cin >> q;
+        if(tolower(q) == 'n'){
+            review = 0;
         }
     }
 
