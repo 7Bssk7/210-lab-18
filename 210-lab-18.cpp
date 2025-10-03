@@ -65,6 +65,13 @@ void addHead( Node *&hd){
         cout << "Enter review comment: "; 
         cin.ignore();
         getline(cin, tempC);
+        newNode->choice.setRating(tempR);
+        newNode->choice.setComment(tempC);
+
+        if(!hd){
+            hd = newNode;
+            newNode->next = nullptr;
+        }
     }
 
     
